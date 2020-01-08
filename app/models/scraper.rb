@@ -7,7 +7,7 @@ class Scraper
         year = 2020
         show_urls = []
 
-        3.times do 
+        10.times do 
             puts year
             season_url = 'http://www.playbill.com/seasons?year=' + year.to_s
             html = open(season_url)
@@ -45,6 +45,8 @@ class Scraper
             begin
                 image = show_doc.css('.bsp-bio-image').css('a').css('img').attribute('src').value
             rescue TypeError
+                image = ''
+            rescue NoMethodError
                 image = ''
             end
             begin
