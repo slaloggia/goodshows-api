@@ -46,3 +46,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'nokogiri'
 gem 'open-uri-s3'
 gem 'pry'
+
+gem "jwt", "~> 2.1"
