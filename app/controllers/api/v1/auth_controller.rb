@@ -5,7 +5,7 @@ class Api::V1::AuthController < ApplicationController
 
         if user && user.authenticate(params['password'])
             token = JWT.encode({user_id: user.id}, 'secretkey', 'HS256')
-            render json: { id: user.id, username: user.username, token: token }
+            render json: { id: user.id, username: user.username,  token: token }
         else
             render json: {error: 'invalid credentials'}, status: 401
         end
@@ -18,7 +18,7 @@ class Api::V1::AuthController < ApplicationController
         user = User.find(user_id)
     
         if(user)
-          render json: { id: user.id, username: user.username, token: token }
+          render json: { id: user.id, username: user.username, my_shows: user.shows, my_reviews: user.reviews, token: token }
         else
           render json: { error: 'invalid token' }, status: 401
         end
