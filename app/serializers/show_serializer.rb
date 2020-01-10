@@ -7,6 +7,10 @@ class ShowSerializer < ActiveModel::Serializer
   end
 
   def to_serialized_json
-    @show.to_json(:include => [:reviews])
+    @show.to_json(:include => {
+      :reviews => {:include => {
+        :user => {:only => [:username]}
+      }}
+    })
   end
 end
