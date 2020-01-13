@@ -18,7 +18,12 @@ class Api::V1::AuthController < ApplicationController
         user = User.find(user_id)
     
         if(user)
-          render json: { id: user.id, username: user.username, my_shows: user.shows, my_reviews: user.reviews, token: token }
+          render json: { 
+              id: user.id, 
+              username: user.username, 
+              my_shows: user.user_shows, 
+              my_reviews: user.reviews, 
+              token: token }
         else
           render json: { error: 'invalid token' }, status: 401
         end

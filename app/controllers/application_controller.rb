@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+    # include ActionController::Serialization
 
     def issue_token(user)
         JWT.encode({user_id: user.id}, ENV['secret_key'], 'HS256')

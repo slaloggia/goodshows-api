@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        puts params
         review = Review.create(review_params)
         render json: ReviewSerializer.new(review).to_serialized_json
     end
