@@ -15,7 +15,8 @@ class UsersController < ApplicationController
         user = User.create(user_params)
         # byebug
         if user
-            render json: UserSerializer.new(user).to_serialized_json
+            token = JWT.encode({user_id: user.id}, 'secretkey', 'HS256')
+            render json: { id: user.id, username: user.username,  token: token }
         else
             render json: user.errors
         end
