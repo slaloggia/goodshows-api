@@ -11,7 +11,7 @@ class UserSerializer < ActiveModel::Serializer
   def to_serialized_json
     @user.to_json(include: [
       reviews: {include: [show: {only: [:title, :image]}]}, 
-      user_shows: {only: [:seen], include: [:show]}
+      user_shows: {only: [:seen, :created_at], include: [:show]}
       ], 
       except: [
         :password_digest, :updated_at

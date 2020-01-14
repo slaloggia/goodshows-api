@@ -54,11 +54,24 @@ class Scraper
             rescue NoMethodError
                 category = ''
             end
+            
+            creatives_obj =  show_doc.css('.bsp-bio-primary-list').css('li').map do |li|
+                    role = li.css('span').text.downcase.delete(':')
+                   people = li.css('a').map do |a|
+                         a.text
+                    end
+
+                    # puts people
+                    
+                    {role => people}
+                end
+
 
             show_obj = {
                 title: title,
                 image: image,
-                category: category
+                category: category,
+                creatives: creatives_obj
             }
         end
     end

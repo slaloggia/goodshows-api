@@ -9,6 +9,7 @@ class ReviewSerializer < ActiveModel::Serializer
 
   def to_serialized_json
     @review.to_json(:include => {
-      :user => {only: [:username]}})
+      :user => {only: [:username]}, 
+      :show => {only: [:title]}})
   end
 end
