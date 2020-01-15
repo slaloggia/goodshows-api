@@ -1,8 +1,12 @@
+Rails.application.routes.default_url_options[:host] = "localhost:3000"
 Rails.application.routes.draw do
+
   resources :shows
   resources :reviews
   resources :user_shows
-  resources :users
+  resources :users, only: [:index, :show, :update, :create] do 
+    get :avatar, on: :member
+  end
 
   namespace :api do
     namespace :v1 do

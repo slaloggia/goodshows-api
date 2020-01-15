@@ -2,16 +2,15 @@ class UsersController < ApplicationController
 
     def index
         users = User.all
-        render json: UserSerializer.new(users).to_serialized_json
+        render json: users
     end
 
     def show
         user = User.find(params[:id])
-        render json: UserSerializer.new(user).to_serialized_json
+        render json: user
     end
 
     def create
-        puts user_params
         user = User.create(user_params)
         # byebug
         if user
@@ -22,10 +21,27 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        user = User.find(params[:id])
+        user.update(user_params)
+        user.save 
+        render json: UserSerializer.new(user).to_serialized_json
+    end
+
+    def avatar
+        user = User.find_by(id: params[:id])
+      
+        if user&.avatar&.attached?
+          redirect_to rails_blob_url(user.avatar)
+        else
+          head :not_found
+        end
+    end
+
 
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :password_confirmation)
+        params.require(:user).permit(:username, :email, :avatar, :password, :password_confirmation)
     end
 end

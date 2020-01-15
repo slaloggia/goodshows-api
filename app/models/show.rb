@@ -1,4 +1,5 @@
 class Show < ApplicationRecord
+    attr_accessor :creatives
     has_many :reviews
     has_many :user_shows
     has_many :users, through: :user_shows
@@ -25,5 +26,14 @@ class Show < ApplicationRecord
              end
             new_show.save
         end
+    end
+
+    def creatives
+        [
+            {book: self[:book]},
+            {music: self[:music]},
+            {lyrics: self[:lyrics]},
+            {playwright: self[:playwright]}
+        ]
     end
 end
