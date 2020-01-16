@@ -1,15 +1,21 @@
 class ReviewSerializer < ActiveModel::Serializer
+  include Rails.application.routes.url_helpers
+
   attributes :id, :user_id, :show_id, :rating, :content, :show
   belongs_to :user
   belongs_to :show
 
-  # def initialize(review_obj)
-  #   @review = review_obj
-  # end
+  def user
+    {
+      username: object.user.username,
+      avatar: avatar
+    }
+  end
 
-  # def to_serialized_json
-  #   @review.to_json(:include => {
-  #     :user => {only: [:username]}, 
-  #     :show => {only: [:title]}})
-  # end
+  def avatar
+    url_for(object.user.avatar) if object.user.avatar.attached?
+  end
+
+
+
 end
