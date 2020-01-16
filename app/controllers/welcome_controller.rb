@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
     def index
-        render index.html
+        render json: {welcome: 'hello'}
     end
 end
