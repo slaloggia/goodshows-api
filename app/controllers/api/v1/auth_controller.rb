@@ -4,7 +4,7 @@ class Api::V1::AuthController < ApplicationController
         user = User.find_by(username: params['username'])
 
         if user && user.authenticate(params['password'])
-            token = JWT.encode({user_id: user.id}, 'secretkey', 'HS256')
+            token = JWT.encode({user_id: user.id}, GoodShowsApi::Application.credentials.auth_secret)
             render json: { id: user.id, username: user.username,  token: token }
         else
             render json: {error: 'invalid credentials'}, status: 401
@@ -13,7 +13,7 @@ class Api::V1::AuthController < ApplicationController
 
     def show
         token = request.headers['Authorization'].split(' ')[1]
-        decode = JWT.decode token, 'secretkey', true, { algorithm: 'HS256' }
+        decode = JWT.decode token, GoodShowsApi::Application.credentials.auth_secret, true, { algorithm: 'HS256' }
         user_id = decode[0]['user_id']
         user = User.find(user_id)
     
