@@ -8,7 +8,7 @@ class UserSerializer < ActiveModel::Serializer
 
 
   def avatar
-    url_for(object.avatar) if object.avatar.attached?
+    object.avatar.service_url if object.avatar.attached?
   end
 
 end

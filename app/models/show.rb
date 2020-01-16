@@ -29,11 +29,11 @@ class Show < ApplicationRecord
     end
 
     def creatives
-        [
-            {book: self[:book]},
-            {music: self[:music]},
-            {lyrics: self[:lyrics]},
-            {playwright: self[:playwright]}
-        ]
+        {
+            book: self[:book],
+            music: self[:music],
+            lyrics: self[:lyrics],
+            playwright: self[:playwright]
+        }
     end
 end

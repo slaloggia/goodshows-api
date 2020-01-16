@@ -1,7 +1,7 @@
 class ReviewSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :user_id, :show_id, :rating, :content, :show
+  attributes :id, :user_id, :show_id, :rating, :created_at, :content, :show
   belongs_to :user
   belongs_to :show
 

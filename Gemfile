@@ -48,3 +48,5 @@ gem 'open-uri-s3'
 gem 'pry'
 
 gem "jwt", "~> 2.1"
+
+gem "google-cloud-storage", "~> 1.11", require: false
