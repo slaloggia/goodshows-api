@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         user = User.create(user_params)
         # byebug
         if user
-            token = JWT.encode({user_id: user.id}, 'secretkey', 'HS256')
+            token = JWT.encode({user_id: user.id}, GoodShowsApi::Application.credentials.auth_secret, 'HS256')
             render json: { id: user.id, username: user.username,  token: token }
         else
             render json: user.errors
@@ -25,8 +25,7 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         user.update(user_params)
         user.save 
-        render json: UserSerializer.new(user).to_serialized_json
-    end
+        render json: user
 
     def avatar
         user = User.find_by(id: params[:id])
