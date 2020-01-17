@@ -26,6 +26,7 @@ class UsersController < ApplicationController
         user.update(user_params)
         user.save 
         render json: user
+    end
 
     def avatar
         user = User.find_by(id: params[:id])
