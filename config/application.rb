@@ -19,16 +19,16 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module GoodShowsApi
-  class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins 'https://good-shows.herokuapp.com/*'
-        resource '*', headers: :any, methods: [:get, :post, :delete, :patch, :options]
-      end
-    end
+# module GoodShowsApi
+#   class Application < Rails::Application
+#     # Initialize configuration defaults for originally generated Rails version.
+#     config.load_defaults 6.0
+#     config.middleware.insert_before 0, Rack::Cors do
+#       allow do
+#         origins 'https://good-shows.herokuapp.com'
+#         resource '*', headers: :any, methods: [:get, :post, :delete, :patch, :options]
+#       end
+#     end
 
 
     # Settings in config/environments/* take precedence over those specified here.
