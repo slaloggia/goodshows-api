@@ -4,4 +4,5 @@ class NotificationsController < ApplicationController
         notifications = Notification.all
         render json: notifications_controller
     end
+    
 end

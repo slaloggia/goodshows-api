@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :notifications
   root 'welcome#index'
+
+  resources :notifications
   resources :shows, only: [:index, :show]
   resources :reviews
   resources :comments, only: [:create, :index]
