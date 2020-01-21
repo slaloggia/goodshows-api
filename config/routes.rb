@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :notifications
+  
+  get '/notifications/:recipient_id', to: 'notifications#index'
+
   resources :shows, only: [:index, :show]
   resources :reviews
   resources :comments, only: [:create, :index]

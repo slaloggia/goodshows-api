@@ -1,7 +1,7 @@
 class NotificationsController < ApplicationController
 
     def index
-        notifications = Notification.all
+        notifications = Notification.where(recipient_id: params[:recipient_id], read: false)
         render json: notifications
     end
 
