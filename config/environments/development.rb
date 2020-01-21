@@ -1,4 +1,4 @@
-Rails.application.routes.default_url_options[:host] = 'https://good-shows-api.herokuapp.com/'
+Rails.application.routes.default_url_options[:host] = 'http://localhost:5000/'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
