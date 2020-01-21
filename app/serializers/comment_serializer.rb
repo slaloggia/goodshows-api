@@ -1,7 +1,7 @@
 class CommentSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :review_id, :content, :user
+  attributes :id, :review_id, :content, :user, :created_at
   belongs_to :review
   belongs_to :user
 

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :comments
+  resources :notifications
   root 'welcome#index'
-  resources :shows
+  resources :shows, only: [:index, :show]
   resources :reviews
+  resources :comments, only: [:create, :index]
   resources :user_shows
   resources :users, only: [:index, :show, :update, :create] do 
     get :avatar, on: :member
