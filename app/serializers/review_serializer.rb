@@ -4,7 +4,7 @@ class ReviewSerializer < ActiveModel::Serializer
   attributes :id, :user_id, :show_id, :rating, :created_at, :content, :show
   belongs_to :user
   belongs_to :show
-  has_many :comments, include_nested_attributes: true
+  has_many :comments, include_nested_attributes: :true
 
   def user
     {
