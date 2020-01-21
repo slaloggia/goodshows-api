@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     
     def create
         comment = Comment.create(comment_params)
-        byebug 
         review = Review.find(params[:review_id])
         actor = User.find(params[:user_id])
         recipient = User.find(review.user_id)
