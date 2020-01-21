@@ -5,8 +5,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :user_shows, include_nested_attributes: :true
   has_many :reviews
 
-
-
   def avatar
     object.avatar.service_url if object.avatar.attached?
   end
