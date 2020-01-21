@@ -6,7 +6,7 @@ class NotificationSerializer < ActiveModel::Serializer
 
   def actor
     {
-      object.actor.username
+      username: object.actor.username
     }
   end
 end
