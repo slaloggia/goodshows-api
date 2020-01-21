@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     
     def create
         comment = Comment.create(comment_params)
+        self.create_notification()
         render json: comment
     end
 
