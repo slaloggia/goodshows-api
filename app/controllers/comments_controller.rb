@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
     end
     
     def create
+        comment = Comment.create(comment_params)
+        byebug 
         review = Review.find(params[:review_id])
         actor = User.find(params[:user_id])
         recipient = User.find(review.user_id)
-        comment = Comment.create(comment_params)
         Notification.create(recipient_id: recipient.id, actor_id: actor.id, read: false, action: 'commented', notifiable_id: review.id, notifiable_type: 'Review' )
         render json: comment
     end
