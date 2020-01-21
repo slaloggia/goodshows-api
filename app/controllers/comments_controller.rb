@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     
     def create
         comment = Comment.create(comment_params)
-        create_notification()
+        create_notification(params)
         render json: comment
     end
 
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
         params.require(:comment).permit(:user_id, :review_id, :content)
     end
 
-    def create_notification
+    def create_notification(params)
         review = Review.find(params[:review_id])
         actor = User.find(params[:user_id])
         recipient = User.find(review.user_id)
