@@ -25,7 +25,7 @@ module GoodShowsApi
     config.load_defaults 6.0
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://good-shows.herokuapp.com/'
+        origins '*'
         resource '*',     
         headers: :any,
         methods: [:get, :post, :put, :patch, :delete, :options, :head],
