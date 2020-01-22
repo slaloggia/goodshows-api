@@ -29,7 +29,7 @@ module GoodShowsApi
         resource '*',     
         headers: :any,
         methods: [:get, :post, :put, :patch, :delete, :options, :head],
-        credentials: false
+        credentials: true
     
       end
     end
