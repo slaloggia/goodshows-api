@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   
   get '/notifications/:recipient_id', to: 'notifications#index'
-  delete '/notifications/:id' to: 'notifications#destroy'
+  delete '/notifications/:id', to: 'notifications#destroy'
 
   resources :shows, only: [:index, :show]
   resources :reviews
