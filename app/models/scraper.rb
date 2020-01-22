@@ -7,7 +7,7 @@ class Scraper
         year = 2020
         show_urls = []
 
-        10.times do 
+        20.times do 
             puts year
             season_url = 'http://www.playbill.com/seasons?year=' + year.to_s
             html = open(season_url)
