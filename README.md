@@ -1,8 +1,8 @@
-#GoodShows API
+# GoodShows API
 
 This is the backend API for the [GoodShows!](https://good-shows.herokuapp.com/) web application. Frontend repo [here](https://github.com/slaloggia/goodshows-client)
 
-##Fuctionality and Technologies
+## Fuctionality and Technologies
 
 RESTful API built with Ruby on Rails with a PostGres database
 
@@ -12,7 +12,7 @@ User images stored with Google Cloud Storage
 
 User authorization with JWT
 
-##Issues
+## Issues
 
 Please feel free to submit an issue with any problems you encounter with the application or suggestions for improvement
 
