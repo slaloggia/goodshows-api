@@ -1,24 +1,21 @@
-# README
+#GoodShows API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend API for the [GoodShows!](https://good-shows.herokuapp.com/) web application. Frontend repo [here](https://github.com/slaloggia/goodshows-client)
 
-Things you may want to cover:
+##Fuctionality and Technologies
 
-* Ruby version
+RESTful API built with Ruby on Rails with a PostGres database
 
-* System dependencies
+Show data scraped from Playbill.com using NokoGiri 
 
-* Configuration
+User images stored with Google Cloud Storage
 
-* Database creation
+User authorization with JWT
 
-* Database initialization
+##Issues
 
-* How to run the test suite
+Please feel free to submit an issue with any problems you encounter with the application or suggestions for improvement
 
-* Services (job queues, cache servers, search engines, etc.)
+Created by Sarah Laloggia for Flatiron School's Software Engineering Bootcamp, Capstone Project 2020
 
-* Deployment instructions
 
-* ...
