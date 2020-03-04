@@ -43,7 +43,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Scraper
-gem 'nokogiri'
+gem 'nokogiri', ">= 1.10.8"
 gem 'open-uri-s3'
 gem 'pry'
 
