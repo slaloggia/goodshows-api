@@ -26,6 +26,8 @@ Your console will include something like
 ```
 You will need to change the fetch url's in the frontend code to http://localhost:[PORTNUMBER from your console]
 
+Clone frontend code, linked above, and follow README instructions to install
+
 ## Issues
 
 Please feel free to submit an issue with any problems you encounter with the application or suggestions for improvement
