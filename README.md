@@ -12,6 +12,20 @@ User images stored with Google Cloud Storage
 
 User authorization with JWT
 
+## Local Installation
+Run:
+```
+bundle install
+rails s
+```
+
+Once your local server is running, make a note of the port:
+Your console will include something like
+```
+* Listening on tcp://127.0.0.1:[PORTNUMBER]
+```
+You will need to change the fetch url's in the frontend code to http://localhost:[PORTNUMBER from your console]
+
 ## Issues
 
 Please feel free to submit an issue with any problems you encounter with the application or suggestions for improvement
