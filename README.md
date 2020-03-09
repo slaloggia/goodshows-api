@@ -16,6 +16,11 @@ User authorization with JWT
 Run:
 ```
 bundle install
+
+rails db:create
+rails db:migrate
+rails db:seed
+<!-- Please note that the seed file is scraping the web for show data. This takes a while. Wait for your console to say "SEEDED" before proceeding --> 
 rails s
 ```
 
