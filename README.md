@@ -13,6 +13,7 @@ User images stored with Google Cloud Storage
 User authorization with JWT
 
 ## Local Installation
+Clone this repo and navigate to it's directory
 Run:
 ```
 bundle install
