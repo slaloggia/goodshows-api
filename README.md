@@ -34,6 +34,12 @@ You will need to change the fetch url's in the frontend code to http://localhost
 
 Clone frontend code, linked above, and follow README instructions to install
 
+## Future Builds
+In the future I am hoping to add:
+- Testing with RSpec
+- Automated scraping to add new shows and update existing ones as changes are made to Playbill 
+- Update functionality for Member model so that users can edit their profiles
+
 ## Issues
 
 Please feel free to submit an issue with any problems you encounter with the application or suggestions for improvement
