@@ -4,13 +4,11 @@ This is the backend API for the [GoodShows!](https://good-shows.herokuapp.com/) 
 
 ## Fuctionality and Technologies
 
-RESTful API built with Ruby on Rails with a PostGres database
-
-Show data scraped from Playbill.com using NokoGiri 
-
-User images stored with Google Cloud Storage
-
-User authorization with JWT
+- RESTful API built with Ruby on Rails with a PostGres database
+- Show data scraped from Playbill.com using NokoGiri 
+- User images stored with Google Cloud Storage
+- User authorization with JWT
+- Customized JSON output with ActiveModel Serializers
 
 ## Local Installation
 Clone this repo and navigate to it's directory
