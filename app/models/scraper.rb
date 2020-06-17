@@ -1,13 +1,14 @@
 require 'nokogiri'
 require 'open-uri-s3'
 require 'pry'
+require 'date'
 
 class Scraper
     def scrape_data
-        year = 2020
+        year = 2000
         show_urls = []
 
-        20.times do 
+        until year > (Date.today.year + 1) do 
             puts year
             season_url = 'http://www.playbill.com/seasons?year=' + year.to_s
             html = open(season_url)
@@ -22,7 +23,7 @@ class Scraper
                     show_urls << url
                 end
             end
-            year -= 1
+            year += 1
 
         end
 
@@ -73,6 +74,7 @@ class Scraper
                 category: category,
                 creatives: creatives_obj
             }
+
         end
     end
 end

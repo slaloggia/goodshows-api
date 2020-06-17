@@ -6,7 +6,11 @@ class UserSerializer < ActiveModel::Serializer
   has_many :reviews
 
   def avatar
+    # production
     object.avatar.service_url if object.avatar.attached?
+
+    # development
+    # url_for(object.avatar) if object.avatar
   end
 
 end
